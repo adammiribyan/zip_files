@@ -1,0 +1,21 @@
+%h1 Listing delivery_files
+
+%table
+  %tr
+    %th Name
+    %th File
+    %th
+    %th
+    %th
+
+  - @delivery_files.each do |delivery_file|
+    %tr
+      %td= delivery_file.name
+      %td= delivery_file.file
+      %td= link_to 'Show', delivery_file
+      %td= link_to 'Edit', edit_delivery_file_path(delivery_file)
+      %td= link_to 'Destroy', delivery_file, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Delivery file', new_delivery_file_path

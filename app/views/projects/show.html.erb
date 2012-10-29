@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<br/>
+
+<p>
+  <b>Source work files: </b>
+  <ul>
+  <% @project.source_work_files.each do |f| %>
+  <li><%= f.name %></li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Source work zip file:</b>
+  <%# <%= @project.source_work_zip_file %1> %>
+  <%= button_tag "Download", type: "button", class: "download_zip_file", data: { type: "source_work", project_id: @project.id } %>
+</p>
+
+<br/>
+
+<p>
+  <b>Delivery files: </b>
+  <ul>
+  <% @project.delivery_files.each do |f| %>
+  <li><%= f.name %></li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Delivery zip file:</b>
+  <%# <%= @project.delivery_zip_file %1> %>
+  <%= button_tag "Download", type: "button", class: "download_zip_file", data: { type: "delivery", project_id: @project.id } %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

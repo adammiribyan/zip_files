@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @delivery_file.name
+%p
+  %b File:
+  = @delivery_file.file
+
+= link_to 'Edit', edit_delivery_file_path(@delivery_file)
+\|
+= link_to 'Back', delivery_files_path
