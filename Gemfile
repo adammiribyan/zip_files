@@ -14,6 +14,7 @@ gem 'rubyzip'
 gem 'sidekiq'
 gem 'slim'
 gem 'sinatra', require: false
+gem 'letter_opener'
 
 
 # Gems used only for assets and not required
