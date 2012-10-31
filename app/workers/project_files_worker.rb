@@ -16,6 +16,12 @@ class ProjectFilesWorker
     else
       Rails.logger.debug "Yet unknown project file type."
     end
+
+    # Check if both source work and delivery files are compressed
+    # and send an email notification to a client
+    if project.files_are_compressed?
+      ProjectsMailer.compressed_files_are_ready(project).deliver
+    end
   end
 
 
