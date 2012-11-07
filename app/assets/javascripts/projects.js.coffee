@@ -4,6 +4,7 @@ jQuery ->
     type = button.data "type"
     project_id = button.data "project-id"
 
+    button.html "Please wait..."
     $.ajax(
       url: "/projects/#{project_id}/zip_url/#{type}",
       type: "get",

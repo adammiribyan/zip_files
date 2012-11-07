@@ -14,8 +14,6 @@ gem 'rubyzip'
 gem 'sidekiq'
 gem 'slim'
 gem 'sinatra', require: false
-gem 'letter_opener'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -45,3 +43,18 @@ gem 'jquery-rails'
 
 # To use debugger
 gem 'debugger'
+
+group :development do
+  gem 'letter_opener'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'guard-spork'
+end
+
+gem 'rspec-rails', group: [:test, :development]
+group :test do
+  gem 'rb-inotify', '~> 0.8.8'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'mocha', require: false
+  gem 'guard-rspec'
+end
